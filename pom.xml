@@ -26,7 +26,7 @@
     </parent>
     <groupId>org.apache.oozie</groupId>
     <artifactId>oozie-main</artifactId>
-    <version>4.0.0-cdh5.0.0</version>
+    <version>4.0.0-cdh5.0.0-OOZIE-1829</version>
     <description>Apache Oozie Main</description>
     <name>Apache Oozie Main</name>
     <packaging>pom</packaging>
@@ -75,9 +75,9 @@
         <hbase.version>${cdh.hbase.version}</hbase.version>
         <hcatalog.version>${cdh.hive.version}</hcatalog.version>
 
-        <hadooplib.version>${hadoop.version}.oozie-${project.version}</hadooplib.version>
-        <hbaselib.version>${hbase.version}.oozie-${project.version}</hbaselib.version>
-        <hcataloglib.version>${hcatalog.version}.oozie-${project.version}</hcataloglib.version>
+        <hadooplib.version>${hadoop.version}.oozie-4.0.0-cdh5.0.0</hadooplib.version>
+        <hbaselib.version>${hbase.version}.oozie-4.0.0-cdh5.0.0</hbaselib.version>
+        <hcataloglib.version>${hcatalog.version}.oozie-4.0.0-cdh5.0.0</hcataloglib.version>
 
         <clover.license>/home/jenkins/tools/clover/latest/lib/clover.license</clover.license>
         <!--
