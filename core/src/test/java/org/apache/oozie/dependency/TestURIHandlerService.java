@@ -57,6 +57,10 @@ public class TestURIHandlerService extends XTestCase {
         assertEquals("hdfs:///", uri.toString());
         uri = uriService.getAuthorityWithScheme("/tmp/file");
         assertEquals("/", uri.toString());
+        uri = uriService.getAuthorityWithScheme("customscheme://example.com:9999?year=${YEAR}&month=${MONTH}");
+        assertEquals("customscheme://example.com:9999", uri.toString());
+        uri = uriService.getAuthorityWithScheme("customscheme:custom?year=${YEAR}");
+        assertEquals("customscheme", uri.toString());
     }
 
     @Test

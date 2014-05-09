@@ -199,14 +199,24 @@ public class URIHandlerService implements Service {
         try {
             if (index == -1) {
                 LOG.trace("Relative path for uri-template "+uri);
+                int schemeSpecicPartIndex = uri.indexOf(":");
+                if (schemeSpecicPartIndex == -1) {
                 return new URI("/");
+                }
+                else {
+                    return new URI(uri.substring(0, schemeSpecicPartIndex));
+                }
             }
             if (uri.indexOf(":///") != -1) {
                 return new URI(uri.substring(0, index + 4));
             }
             int pathIndex = uri.indexOf("/", index + 4);
             if (pathIndex == -1) {
+        	int queryIndex = uri.indexOf("?", index + 4);
+        	if (queryIndex == -1) {
                 return new URI(uri.substring(0));
+        	}
+        	return new URI(uri.substring(0, queryIndex));
             }
             else {
                 return new URI(uri.substring(0, pathIndex));
